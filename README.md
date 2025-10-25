@@ -3,7 +3,7 @@
 Scripts for testing out dexscreener on windows
 
 ```sh
-PS C:\Users\User> curl.exe 'https://api.dexscreener.com/token-profiles/latest/v1' | jq '.[0]'
+$ curl.exe 'https://api.dexscreener.com/token-profiles/latest/v1' | jq '.[0]'
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100 30333    0 30333    0     0  55405      0 --:--:-- --:--:-- --:--:-- 55656
@@ -32,9 +32,32 @@ PS C:\Users\User> curl.exe 'https://api.dexscreener.com/token-profiles/latest/v1
 To get boosted ones that match on ethereum
 
 ```sh
-$ curl.exe 'https://api.dexscreener.com/token-boosts/latest/v1' | jq -c ' .[] | select( .chainId | contains(\"ethereum\") ) '
+$ curl.exe 'https://api.dexscreener.com/token-boosts/latest/v1' | jq '.[] | select(.chainId | contains(\"ethereum\"))'
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-100 25892    0 25892    0     0    97k      0 --:--:-- --:--:-- --:--:--   99k
-{"url":"https://dexscreener.com/ethereum/0xe4224e3fac2926eb18a20fa168d1b8c51e854526","chainId":"ethereum","tokenAddress":"0xE4224E3fAC2926Eb18A20Fa168D1B8C51E854526","description":"??????????? GOMA INU (???????????????) The Hidden Sister of Doge\n\nWhile the world adored Kabosu, few knew of her quiet companion Goma, the gentle Shiba who shared her heart and home in Chiba, Japan.","icon":"dda79694b064a1a53f7d9086574a4b8a4af45639c2d542f8dd342c155a8a47e8","header":"https://cdn.dexscreener.com/cms/images/f15d14858c39cb191d3a55d4e9ffa3cd037a0f1400fc4980587c2733bfe15c37?width=900&height=300&fit=crop&quality=95&format=auto","openGraph":"https://cdn.dexscreener.com/token-images/og/ethereum/0xe4224e3fac2926eb18a20fa168d1b8c51e854526?timestamp=1761396000000","links":[{"url":"https://gomainu.xyz/"},{"type":"twitter","url":"https://x.com/GomaInuEth"},{"type":"telegram","url":"https://t.me/ShibaInuGOMA"}],"totalAmount":100,"amount":100}
+100 25892    0 25892    0     0  94855      0 --:--:-- --:--:-- --:--:-- 95896
+{
+  "url": "https://dexscreener.com/ethereum/0xe4224e3fac2926eb18a20fa168d1b8c51e854526",
+  "chainId": "ethereum",
+  "tokenAddress": "0xE4224E3fAC2926Eb18A20Fa168D1B8C51E854526",
+  "description": "??????????? GOMA INU (???????????????) The Hidden Sister of Doge\n\nWhile the world adored Kabosu, few knew of her quiet companion Goma, the gentle Shiba who shared her heart and home in Chiba, Japan.",
+  "icon": "dda79694b064a1a53f7d9086574a4b8a4af45639c2d542f8dd342c155a8a47e8",
+  "header": "https://cdn.dexscreener.com/cms/images/f15d14858c39cb191d3a55d4e9ffa3cd037a0f1400fc4980587c2733bfe15c37?width=900&height=300&fit=crop&quality=95&format=auto",
+  "openGraph": "https://cdn.dexscreener.com/token-images/og/ethereum/0xe4224e3fac2926eb18a20fa168d1b8c51e854526?timestamp=1761396000000",
+  "links": [
+    {
+      "url": "https://gomainu.xyz/"
+    },
+    {
+      "type": "twitter",
+      "url": "https://x.com/GomaInuEth"
+    },
+    {
+      "type": "telegram",
+      "url": "https://t.me/ShibaInuGOMA"
+    }
+  ],
+  "totalAmount": 100,
+  "amount": 100
+}
 ```
